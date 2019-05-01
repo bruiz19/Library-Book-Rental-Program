@@ -2,56 +2,33 @@
 //Section 02
 
 #include "book.h"
-#include <string>
 
-using namespace std;
+Book::Book(int BI, string TI, string AU, string CAT) {
+    title=TI;
+    author=AU;
+    category=CAT;
+    bookID=BI;
+}
 
-Book::Book(){
-  bookID = -1;
-  title = " ";
-  author = " ";
-  category = " ";
-  checked = false;
+string Book::getTitle() {
+    return title;
 }
-Book::Book(int id, string t, string a, string c){
-  bookID = id;
-  title = t;
-  author = a;
-  category = c;
+
+string Book::getAuthor() {
+    return author;
 }
-int Book::getBookID(){
-  return bookID;
+
+string Book::getCategory() {
+    return category;
 }
-void Book::setBookID(int id){
-  bookID = id;
+
+int Book::getId() {
+    return bookID;
 }
-string Book::getTitle(){
-  return title;
+void Book::setPersonPtr(Person * ptr) {
+    personPtr=ptr;
 }
-void Book::setTitle(string t){
-  title = t;
-}
-string Book::getAuthor(){
-  return author;
-}
-void Book::setAuthor(string a){
-  author = a;
-}
-string Book::getCategory(){
-  return category;
-}
-void Book::setCategory(string c){
-  category = c;
-}
-void Book::setChecked(bool c){
-    checked = c;
-}
-bool Book::getChecked(){
-    return checked;
-}
-void Book::setRenterID(int id){
-  renterID = id;
-}
-int Book::getRenterID(){
-  return renterID;
+
+Person * Book::getPersonPtr() {
+    return personPtr;
 }
