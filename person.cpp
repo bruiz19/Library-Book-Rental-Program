@@ -1,46 +1,36 @@
 //Brandon Ruiz
 //Section 02
 
-#include <string>
-#include <vector>
-#include <iostream>
 #include "person.h"
 
-using namespace std;
+Person::Person(int CI, bool A, string FN, string LN) {
+    cardID=CI;
+    active=A;
+    firstName=FN;
+    lastName=LN;
+}
 
-Person::Person(){
-  cardID = -1;
-  active = false;
-  firstName = " ";
-  lastName = " ";
+string Person::getFirstName() {
+    return firstName;
 }
-Person::Person(int id, bool act, string fn, string ln){
-  cardID = id;
-  active = act;
-  firstName = fn;
-  lastName = ln;
+
+string Person::getLastName() {
+    return lastName;
 }
-int Person::getCardID(){
-  return cardID;
+
+int Person::getId() {
+    return cardID;
 }
-void Person::setCardID(int id){
-  cardID = id;
+
+void Person::setActive(bool A) {
+    active=A;
 }
-bool Person::getActive(){
-  return active;
+
+bool Person::isActive() {
+    return active;
 }
-void Person::setActive(bool a){
-  active = a;
-}
-string Person::getFirstName(){
-  return firstName;
-}
-void Person::setFirstName(string fName){
-  firstName = fName;
-}
-string Person::getLastName(){
-  return lastName;
-}
-void Person::setLastName(string lName){
-  lastName = lName;
+
+string Person::fullName() {
+    string fullName=firstName+" "+lastName;
+    return fullName;
 }
