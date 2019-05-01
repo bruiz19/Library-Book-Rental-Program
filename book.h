@@ -1,34 +1,29 @@
 //Brandon Ruiz
 //Section 02
 
+//begin book.h
 #ifndef BOOK_H
 #define BOOK_H
+
 #include <string>
+#include "person.h"
 
-using namespace std;
+class Book
+{
+private:
+    string   title;
+    string   author;
+    string   category;
+    int      bookID;
+    Person * personPtr = nullptr;
 
-class Book{
-  private:
-    int bookID;
-    string title;
-    string author;
-    string category;
-    bool checked = false;
-    int renterID = -1;
-  public:
-    Book();
-    Book(int id, string t, string a, string c);
-    int getBookID();
-    void setBookID(int id);
-    string getTitle();
-    void setTitle(string t);
-    string getAuthor();
-    void setAuthor(string a);
-    string getCategory();
-    void setCategory(string c);
-    void setChecked(bool c);
-    bool getChecked();
-    void setRenterID(int id);
-    int getRenterID();
+public:
+    Book(int BI, string TI, string AU, string CAT);
+    string   getTitle();
+    string   getAuthor();
+    string   getCategory();
+    int      getId();
+    void     setPersonPtr(Person * ptr);
+    Person * getPersonPtr();
 };
-#endif
+#endif // end book.h
